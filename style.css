@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", serif;
+}
+
+.toggle-box-2 {
+  transition: all 0.6s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.signIn-form {
+  transition: all 0.6s ease-in-out;
+  transform: translateX(100%);
+}
+
+.toggle-box-1 {
+  transition: all 0.6s ease-in-out;
+}
+.login-form {
+  transition: all 0.6s ease-in-out;
+}
+
+.main-container.check {
+  .toggle-box-1 {
+    transform: translateX(100%);
+  }
+  .login-form {
+    transform: translateX(-100%);
+  }
+  .toggle-box-2 {
+    transition: all 0.6s ease-in-out;
+    transform: translateX(0%);
+  }
+
+  .signIn-form {
+    transition: all 0.6s ease-in-out;
+    transform: translateX(0%);
+  }
+}
+
+@media (max-width: 520px) {
+  .toggle-box-1 {
+    border-radius: 0 !important;
+    border-top-left-radius: 50px !important;
+    border-top-right-radius: 50px !important;
+  }
+  .toggle-box-2 {
+    border-radius: 0 !important;
+    border-bottom-right-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+  }
+}

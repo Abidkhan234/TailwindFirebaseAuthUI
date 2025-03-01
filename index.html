@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Registeration</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <link rel="stylesheet" href="./src/output.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="flex h-screen justify-center items-center overflow-hidden">
+      <div
+        class="main-container relative w-full h-full max-w-[700px] max-h-[450px] max-[520px]:max-h-full sm:rounded-xl shadow-2xl overflow-hidden"
+      >
+        <div
+          class="login-form absolute top-0 left-0 max-[520px]:h-[80%] h-full max-[520px]:w-full w-[50%] py-3.5 px-7 flex flex-col gap-5 justify-center"
+        >
+          <h1
+            class="text-3xl font-semibold text-[#52BDAA] text-center tracking-wider mb-1"
+          >
+            Login
+          </h1>
+
+          <div class="input-group relative">
+            <div>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+                class="bg-[#ccc] w-full px-3.5 pr-7 py-2.5 rounded-lg font-medium text-sm outline-0"
+                autocomplete="off"
+              />
+              <div class="error ms-1 invisible">
+                <p class="text-sm text-red-600"></p>
+              </div>
+            </div>
+            <div
+              class="password-eye-btn-div absolute top-[50%] right-2 translate-y-[-50%]"
+            >
+              <i class="fas fa-envelope"></i>
+            </div>
+          </div>
+
+          <div class="input-group relative">
+            <div>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+                class="bg-[#ccc] relative w-full px-3.5 pr-7 py-2.5 rounded-lg font-medium text-sm outline-0 password"
+              />
+
+              <div class="error ms-1 invisible">
+                <p class="text-sm text-red-600"></p>
+              </div>
+            </div>
+            <div
+              class="password-eye-btn-div absolute top-[50%] right-2 translate-y-[-50%]"
+            >
+              <button class="cursor-pointer password-eye-btn">
+                <i class="fas fa-eye-slash"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="">
+            <button
+              class="bg-[#52BDAA] w-full py-2 rounded-lg font-medium tracking-wide text-white cursor-pointer"
+              id="login-btn"
+            >
+              Login
+            </button>
+          </div>
+
+          <div class="social-icons flex gap-5 justify-center flex-wrap mt-2">
+            <a
+              href="#"
+              class="text-lg px-2 py-1 rounded-lg text-[#52BDAA] border-2 border-[#52BDAA]"
+              ><i class="fab fa-google"></i
+            ></a>
+            <a
+              href="#"
+              class="text-lg px-2 py-1 rounded-lg text-[#52BDAA] border-2 border-[#52BDAA]"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="#"
+              class="text-lg px-2 py-1 rounded-lg text-[#52BDAA] border-2 border-[#52BDAA]"
+              ><i class="fab fa-yahoo"></i
+            ></a>
+          </div>
+        </div>
+
+        <div
+          class="signIn-form absolute top-0 right-0 h-full max-[520px]:w-full w-[50%] py-3.5 md:px-7 px-4 flex flex-col justify-end gap-4"
+        >
+          <h1
+            class="md:text-3xl text-2xl max-[520px]:text-3xl font-semibold text-[#52BDAA] text-center tracking-wider mb-2"
+          >
+            Create Account
+          </h1>
+
+          <div class="input-group relative">
+            <div>
+              <input
+                type="text"
+                id="fullName"
+                placeholder="Enter Name"
+                class="bg-[#ccc] w-full px-3.5 pr-7 py-2.5 rounded-lg font-medium text-sm outline-0"
+                required
+                autocomplete="off"
+              />
+              <div class="error ms-1 invisible">
+                <p class="text-sm text-red-600"></p>
+              </div>
+            </div>
+            <div
+              class="password-eye-btn-div absolute top-[50%] right-2 translate-y-[-50%]"
+            >
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+
+          <div class="input-group relative">
+            <div>
+              <input
+                type="email"
+                id="signInemail"
+                placeholder="Enter Email"
+                class="bg-[#ccc] w-full px-3.5 pr-7 py-2.5 rounded-lg font-medium text-sm outline-0"
+                required
+                autocomplete="off"
+              />
+              <div class="error ms-1 invisible">
+                <p class="text-sm text-red-600"></p>
+              </div>
+            </div>
+            <div
+              class="password-eye-btn-div absolute top-[50%] right-2 translate-y-[-50%]"
+            >
+              <i class="fas fa-envelope"></i>
+            </div>
+          </div>
+
+          <div class="input-group relative">
+            <div>
+              <input
+                type="password"
+                id="signInpassword"
+                placeholder="Enter Password"
+                required
+                class="bg-[#ccc] relative w-full px-3.5 pr-7 py-2.5 rounded-lg font-medium text-sm outline-0 password"
+              />
+              <div class="error ms-1 invisible">
+                <p class="text-sm text-red-600"></p>
+              </div>
+            </div>
+            <div
+              class="password-eye-btn-div absolute top-[50%] right-2 translate-y-[-50%] z-10"
+            >
+              <button class="cursor-pointer password-eye-btn">
+                <i class="fas fa-eye-slash"></i>
+                <i class="fas fa-eye" style="display: none"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="">
+            <button
+              class="bg-[#52BDAA] w-full py-2 rounded-lg font-medium tracking-wide text-white cursor-pointer"
+              id="signIn-btn"
+            >
+              Create Account
+            </button>
+          </div>
+
+          <div class="social-icons flex gap-7 justify-center flex-wrap mt-2">
+            <a
+              href="#"
+              class="text-lg px-2 py-1 rounded-lg text-[#52BDAA] border-2 border-[#52BDAA]"
+              ><i class="fab fa-google"></i
+            ></a>
+            <a
+              href="#"
+              class="text-lg px-2 py-1 rounded-lg text-[#52BDAA] border-2 border-[#52BDAA]"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="#"
+              class="text-lg px-2 py-1 rounded-lg text-[#52BDAA] border-2 border-[#52BDAA]"
+              ><i class="fab fa-yahoo"></i
+            ></a>
+          </div>
+        </div>
+
+        <div
+          class="toggle-box-1 absolute max-[520px]:bottom-0 max-[520px]:left-0 sm:top-0 right-0 bg-[#52BDAA] max-[520px]:h-[30%] h-full max-[520px]:w-full w-[50%] flex flex-col justify-center items-center gap-4"
+          style="
+            border-top-left-radius: 150px;
+            border-bottom-left-radius: 150px;
+          "
+        >
+          <h1 class="max-[600px]:text-3xl text-4xl font-semibold text-white">
+            Hello, Friend!
+          </h1>
+          <p class="font-medium text-white max-[600px]:text-sm text-lg">
+            Don't have an account
+          </p>
+
+          <button
+            class="sign-in bg-white max-[600px]:px-4 px-8 py-2 rounded-lg font-medium cursor-pointer max-[600px]:text-sm"
+          >
+            Create account
+          </button>
+        </div>
+
+        <div
+          class="toggle-box-2 absolute top-0 left-0 bg-[#52BDAA] max-[520px]:h-[30%] h-full max-[520px]:w-full w-[50%] flex flex-col justify-center items-center max-[520px]:gap-2 gap-4"
+          style="
+            border-top-right-radius: 150px;
+            border-bottom-right-radius: 150px;
+          "
+        >
+          <h1 class="max-[600px]:text-3xl text-4xl font-semibold text-white">
+            Welcome Back!
+          </h1>
+          <p class="font-medium text-white text-lg max-[600px]:text-sm">
+            Already have an account
+          </p>
+
+          <button
+            class="login bg-white px-8 py-2 rounded-lg font-medium cursor-pointer max-[600px]:text-sm max-[600px]:px-4"
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="./app.js" type="module"></script>
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</html>
