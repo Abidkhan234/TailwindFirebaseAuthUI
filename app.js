@@ -1,12 +1,11 @@
-
 const container = document.querySelector(".main-container");
 
 const toggleBtn1 = document.querySelector(".toggle-box-1 button");
 const toggleBtn2 = document.querySelector(".toggle-box-2 button");
 
-toggleBtn1.addEventListener("click", () => container.classList.add("check"));
+toggleBtn1?.addEventListener("click", () => container.classList.add("check"));
 
-toggleBtn2.addEventListener("click", () => container.classList.remove("check"));
+toggleBtn2?.addEventListener("click", () => container.classList.remove("check"));
 
 // For password check
 
@@ -54,16 +53,24 @@ const signInBtn = document.getElementById("signIn-btn");
 
 const loginBtn = document.getElementById("login-btn");
 
+const googleBtn = document.getElementById("google-btn");
+
+const userName = document.getElementById("userName");
+
+const userPic = document.getElementById("userPic");
+
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 ;
 
 const passwordRegex = /^(?=.*[0-9])[a-zA-Z0-9]{6,16}$/;
 
-import { auth, createUserWithEmailAndPassword, db, doc, getDoc, setDoc, signInWithEmailAndPassword } from "./fireBase.js";
+import { auth, createUserWithEmailAndPassword, db, doc, getDoc, GoogleAuthProvider, onAuthStateChanged, setDoc, signInWithEmailAndPassword, signInWithPopup } from "./fireBase.js";
 
-signInBtn.addEventListener("click", () => signInChecking());
+const provider = new GoogleAuthProvider();
 
-loginBtn.addEventListener("click", () => loginChecking());
+signInBtn?.addEventListener("click", () => signInChecking());
+
+loginBtn?.addEventListener("click", () => loginChecking());
 
 const errorFunc = (message, duration, color) => {
 
@@ -217,3 +224,37 @@ const loginChecking = () => {
 }
 
 // For FireBase Login
+
+
+// For Google Login Btn
+
+
+googleBtn?.addEventListener("click", () => {
+
+    signInWithPopup(auth, provider)
+        .then((result) => {
+
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+
+            const user = result.user;
+
+            errorFunc("Logged in woth google successfully.", 2000, "green");
+
+            setTimeout(() => {
+                window.location.href = "./LoggedIn.html";
+            }, 1000);
+
+        }).catch((error) => {
+
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            console.log(errorMessage);
+
+
+        });
+
+})
+
+// For Google Login Btn
+
